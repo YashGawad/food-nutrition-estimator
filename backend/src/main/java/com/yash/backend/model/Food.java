@@ -1,6 +1,7 @@
 package com.yash.backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "food")
@@ -10,23 +11,11 @@ public class Food {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Food name cannot be empty")
     private String name;
+
+    @Min(value = 1, message = "Calories must be greater than 0")
     private int calories;
 
-    // 🔥 ADD THESE (VERY IMPORTANT)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
+    // getters and setters
 }
