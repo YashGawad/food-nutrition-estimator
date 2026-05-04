@@ -17,13 +17,16 @@ public class S3Service {
             .build();
 
     // 🔥 THIS METHOD WAS MISSING
-    public void uploadFile(String filePath, String key) {
+    public String uploadFile(String filePath, String key) {
 
-        PutObjectRequest request = PutObjectRequest.builder()
-                .bucket(bucketName)
-                .key(key)
-                .build();
+    PutObjectRequest request = PutObjectRequest.builder()
+            .bucket(bucketName)
+            .key(key)
+            .build();
 
-        s3.putObject(request, Paths.get(filePath));
-    }
+    s3.putObject(request, Paths.get(filePath));
+
+    // 🔥 RETURN URL
+    return "https://" + bucketName + ".s3.amazonaws.com/" + key;
+}
 }

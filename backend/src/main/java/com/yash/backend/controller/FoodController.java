@@ -31,7 +31,35 @@ public class FoodController {
 
     @PostMapping("/upload")
     public String uploadImage() {
-        s3Service.uploadFile("D:\\apple.jpg", "apple.jpg");
-        return "Uploaded successfully";
+
+        String url = s3Service.uploadFile("D:/apple.jpg", "apple.jpg");
+
+        return url;
+    }
+
+    @PostMapping("/add-with-image")
+    public Food addFoodWithImage(
+            @RequestParam("name") String name,
+            @RequestParam("calories") int calories,
+            @RequestParam("file") org.springframework.web.multipart.MultipartFile file
+    ) throws java.io.IOException {
+
+        // Step 1: Convert MultipartFile → File
+        String fileName = file.getOriginalFilename();
+        java.io.File tempFile = new java.io.File(
+                System.getProperty("java.io.tmpdir") + "/" + fileName
+        );
+        file.transferTo(tempFile);
+
+        // Step 2: Upload to S3
+        String url = s3Service.uploadFile(tempFile.getAbsolutePath(), fileName);
+
+        // Step 3: Save in DB
+        Food food = new Food();
+        food.setName(name);
+        food.setCalories(calories);
+        food.setImageUrl(url);
+
+        return service.addFood(food);
     }
 }
