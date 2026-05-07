@@ -17,11 +17,18 @@ public class Food {
     @Min(value = 1, message = "Calories must be greater than 0")
     private int calories;
 
-    // 🔥 NEW FIELD (S3 URL)
+    // Nutrition fields
+    private double protein;
+    private double carbs;
+    private double fat;
+
+    // S3 image URL
     @Column(name = "image_url")
     private String imageUrl;
 
-    // 🔹 Getters and Setters
+    // -----------------------------
+    // Getters
+    // -----------------------------
 
     public Long getId() {
         return id;
@@ -35,9 +42,25 @@ public class Food {
         return calories;
     }
 
+    public double getProtein() {
+        return protein;
+    }
+
+    public double getCarbs() {
+        return carbs;
+    }
+
+    public double getFat() {
+        return fat;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
+
+    // -----------------------------
+    // Setters
+    // -----------------------------
 
     public void setId(Long id) {
         this.id = id;
@@ -49,6 +72,18 @@ public class Food {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public void setCarbs(double carbs) {
+        this.carbs = carbs;
+    }
+
+    public void setFat(double fat) {
+        this.fat = fat;
     }
 
     public void setImageUrl(String imageUrl) {

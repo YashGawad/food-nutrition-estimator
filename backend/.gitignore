@@ -41,3 +41,45 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+
+# =========================
+# AI / Python
+# =========================
+
+# Dataset
+ai/dataset/
+
+# Trained AI models
+*.h5
+*.keras
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Python virtual environment
+venv/
+.env
+
+# =========================
+# Frontend
+# =========================
+
+# Node modules
+node_modules/
+
+# Vite build files
+dist/
+
+# =========================
+# TensorFlow / Jupyter
+# =========================
+
+.ipynb_checkpoints/
+
+# =========================
+# Temporary uploads
+# =========================
+
+temp/
+uploads/
