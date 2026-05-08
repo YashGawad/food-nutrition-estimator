@@ -19,7 +19,7 @@ Your app will be available at: **http://localhost:5173**
 
 ### 3. Backend Requirement
 
-Make sure your backend is running on `http://localhost:8080`:
+Make sure your backend is running on `${import.meta.env.VITE_API_URL}`:
 
 - Check your backend is started
 - Verify API endpoints are responding

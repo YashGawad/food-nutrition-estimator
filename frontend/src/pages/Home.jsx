@@ -11,7 +11,7 @@ function Home() {
   const fetchFoods = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8080/api/food");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/food`);
       const data = await response.json();
       setFoods(data.reverse());
     } catch (error) {

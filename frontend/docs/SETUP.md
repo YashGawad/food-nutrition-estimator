@@ -79,7 +79,7 @@ Edit API calls in code to match your backend URL:
 
 **Current Configuration:**
 
-- Backend URL: `http://localhost:8080`
+- Backend URL: `${import.meta.env.VITE_API_URL}`
 
 ### To Change Backend URL
 
@@ -91,7 +91,7 @@ VITE_API_URL=http://your-backend-url:8080
 ```
 
 Option 2: Edit in code
-Search for `http://localhost:8080` in:
+Search for `${import.meta.env.VITE_API_URL}` in:
 
 - `src/pages/Home.jsx`
 - `src/pages/Dashboard.jsx`
@@ -100,8 +100,8 @@ Search for `http://localhost:8080` in:
 ### Verify Backend Connection
 
 1. Start backend first
-2. Check backend is running: `http://localhost:8080`
-3. Test API endpoint: `http://localhost:8080/api/food`
+2. Check backend is running: `${import.meta.env.VITE_API_URL}`
+3. Test API endpoint: `${import.meta.env.VITE_API_URL}/api/food`
 4. Should return JSON array or error
 
 ## 📦 Production Build
@@ -204,7 +204,7 @@ Create `.env` file in frontend directory:
 
 ```
 # Backend API URL
-VITE_API_URL=http://localhost:8080
+VITE_API_URL=${import.meta.env.VITE_API_URL}
 
 # App Name
 VITE_APP_NAME=NutriAI

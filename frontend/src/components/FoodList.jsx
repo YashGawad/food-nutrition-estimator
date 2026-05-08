@@ -15,7 +15,7 @@ function FoodList({ foods }) {
   const handleDelete = async (foodId) => {
     if (window.confirm("Delete this food item?")) {
       try {
-        await fetch(`http://localhost:8080/api/food/${foodId}`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/api/food/${foodId}`, {
           method: "DELETE",
         });
         window.location.reload();

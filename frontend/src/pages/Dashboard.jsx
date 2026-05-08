@@ -21,7 +21,7 @@ function Dashboard() {
   const fetchFoods = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8080/api/food");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/food`);
       const data = await response.json();
       setFoods(data.reverse());
       calculateStats(data);
@@ -56,7 +56,7 @@ function Dashboard() {
     if (window.confirm("Are you sure you want to delete this food item?")) {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/food/${foodId}`,
+          `${import.meta.env.VITE_API_URL}/api/food/${foodId}`,
           {
             method: "DELETE",
           },

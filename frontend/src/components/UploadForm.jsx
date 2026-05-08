@@ -46,7 +46,7 @@ function UploadForm({ refreshFoods }) {
       formData.append("file", file);
 
       const response = await fetch(
-        "http://localhost:8080/api/food/auto-detect",
+        `${import.meta.env.VITE_API_URL}/api/food/auto-detect`,
         {
           method: "POST",
           body: formData,
