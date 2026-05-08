@@ -1,16 +1,142 @@
-# React + Vite
+# 🍽️ NutriAI - Food Nutrition Estimator Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, professional React + Vite application for AI-powered food nutrition analysis and tracking.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 📸 Home Page
 
-## React Compiler
+- Hero section with feature highlights
+- AI-powered food image upload with drag & drop
+- Real-time food detection and nutrition analysis
+- Recent foods display with quick statistics
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📊 Dashboard
 
-## Expanding the ESLint configuration
+- Comprehensive nutrition statistics overview
+- Food tracking history with detailed table view
+- Multi-filter options (high calories, high protein, etc.)
+- Download nutrition reports
+- Delete functionality for tracked foods
+- Daily/historical insights
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📐 Nutrition Calculator
+
+- Manual nutrition value input
+- Meal planner with servings calculator
+- Daily nutrition tracking
+- Meal history management
+- Real-time calculation and summation
+
+### ℹ️ About Page
+
+- Company mission and vision
+- Feature showcase
+- How it works section
+- Supported food categories
+- FAQ section
+- Contact information
+
+### Navigation & Layout
+
+- Sticky responsive header with navigation
+- Mobile-friendly menu toggle
+- Professional footer with social links
+- Consistent design across all pages
+
+## 🛠️ Tech Stack
+
+- **React 19** - UI framework
+- **Vite 8** - Build tool and dev server
+- **React Router 7** - Client-side routing
+- **Lucide React** - Professional icons
+- **CSS3** - Modern styling with CSS variables
+
+## 📋 Prerequisites
+
+- Node.js >= 16
+- npm or yarn
+
+## 🚀 Getting Started
+
+### Installation
+
+```bash
+cd frontend
+npm install
+```
+
+### Development Server
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+frontend/
+├── src/
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── Calculator.jsx
+│   │   └── About.jsx
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── UploadForm.jsx
+│   │   └── FoodList.jsx
+│   ├── styles/
+│   │   ├── Header.css
+│   │   ├── Footer.css
+│   │   ├── Home.css
+│   │   ├── Dashboard.css
+│   │   ├── Calculator.css
+│   │   ├── About.css
+│   │   ├── UploadForm.css
+│   │   └── FoodList.css
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+└── package.json
+```
+
+## 🎨 Design System
+
+**Colors**: Indigo primary, Green success, Red error  
+**Spacing**: Consistent scale from xs to 2xl  
+**Responsive**: Mobile-first design for all devices
+
+## 🔄 API Integration
+
+Backend API endpoints:
+
+- `GET /api/food` - Fetch all foods
+- `POST /api/food/auto-detect` - Upload and detect food
+- `DELETE /api/food/{id}` - Delete food item
+
+## 📱 Responsive Design
+
+Fully responsive on desktop, tablet, and mobile devices.
+
+## 🚀 Performance
+
+- Fast Vite builds
+- Lazy route loading
+- Optimized rendering
+- Smooth animations
+
+---
+
+**Version**: 2.0 - Professional Edition
