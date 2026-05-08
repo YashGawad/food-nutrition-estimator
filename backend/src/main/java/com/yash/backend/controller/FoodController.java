@@ -156,4 +156,9 @@ public class FoodController {
 
         return service.addFood(food);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteFood(@PathVariable Long id) {
+            service.deleteFood(id);
+    }
 }

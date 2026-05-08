@@ -20,4 +20,8 @@ public class FoodService {
     public List<Food> getAllFoods() {
         return repo.findAll();
     }
+
+    public void deleteFood(Long id) {
+        repo.deleteById(id);
+    }
 }
