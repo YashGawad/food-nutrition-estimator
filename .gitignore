@@ -28,7 +28,6 @@ replay_pid*
 # =========================
 
 ai/dataset/
-*.h5
 *.keras
 
 # Python
